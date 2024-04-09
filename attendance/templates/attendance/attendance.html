@@ -94,12 +94,10 @@
             if (mediaStream){
                 mediaStream.getTracks().forEach(track=>track.stop())
             }
-            //imageCapture.style.display='none'
-            //employeeDetails.style.display='block'
+
             // Convert the preview image to a blob
             const imageCaptured = await blobToBase64(dataURLToBlob(previewImg.src));
             console.log('Image Blob:', imageCaptured);
-
 
             // Make HTTP POST request to API endpoint
             fetch('{% url 'register-attendance' %}', {
@@ -114,77 +112,17 @@
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json(); // Parse response JSON
+                return response.json();
             })
             .then(data => {
                 console.log('Response:', data);
-                // Handle success response
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Handle error
             });
 
-            // Here you can do further processing with the image blob, such as sending it to the server
         });
 
-        /*document.getElementById('employee-details-form').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Get form data
-            const formData = new FormData(this);
-
-            // Convert form data to JSON object
-            const jsonData = {};
-            formData.forEach((value, key) => {
-                jsonData[key] = value;
-            });
-
-            jsonData['image']=await blobToBase64(dataURLToBlob(previewImg.src));
-
-            ////////////////////////////blob to image////////////////
-
-            blob=dataURLToBlob(previewImg.src);
-
-            // Assuming blob contains the Blob data
-            const imageUrl = URL.createObjectURL(blob);
-
-            // Create an image element
-            const imageElement = document.createElement('img');
-
-            // Set the src attribute to the URL of the Blob
-            imageElement.src = imageUrl;
-
-            // Append the image element to the DOM
-            document.body.appendChild(imageElement);
-
-            ///////////////////////////////////////////////////////////
-
-            console.log('Form data',jsonData['image'])
-            // Make HTTP POST request to API endpoint
-            fetch(), {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Add any other headers as needed
-                },
-                body: JSON.stringify(jsonData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json(); // Parse response JSON
-            })
-            .then(data => {
-                console.log('Response:', data);
-                // Handle success response
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Handle error
-            });
-    });*/
 
         // Function to convert data URL to blob
         function dataURLToBlob(dataURL) {

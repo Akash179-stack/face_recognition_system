@@ -29,9 +29,7 @@ def employees(request):
 def post_employee(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        image = data['image']
-        # print("image", ImageFile(io.BytesIO(base64.b64decode(data['image'])), name=f"empdc.jpeg"))
-        # print(ImageFile(io.BytesIO(image.read()),name=f"emp.name"))
+
         try:
             emp_obj = EmployeeDetails.objects.create(emp_name=data['name'],
                                                      emp_email=data['email'],
@@ -69,7 +67,5 @@ def employee_list(request):
          'image': base64.b64encode(employee.image).decode('utf-8')} for
         employee in employees
     ]
-    # print('employees:', serialized_employees)
-    # serialized_employees = serialize('json', employees)
 
     return JsonResponse({'employees': serialized_employees, 'total_pages': paginator.num_pages, 'page': page_number})
