@@ -53,7 +53,7 @@ Facial recognition systems are powerful tools for identifying individuals from d
 1. Clone the repository:
    ```bash
    git clone https://github.com/arunnasarain/face_recognition_system.git
-2. [face-recognition](https://pypi.org/project/face-recognition/) package supports only python3.8 and python3.9. Change directory ```cd face_recognition_system``` and [setup virtual environment](#venv).
+2. [face-recognition](https://pypi.org/project/face-recognition/) package supports only python3.8 and python3.9. Change directory ```cd face_recognition_system``` and [setup virtual environment](#setting-up-virtual-environment-for-python-39).
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -73,7 +73,7 @@ Facial recognition systems are powerful tools for identifying individuals from d
 Log in as an employee to view personal attendance statistics and submit leave requests.
 
 
-## Setting up Virtual Environment for Python 3.9{#venv}
+## Setting up Virtual Environment for Python 3.9
 1. Install Python 3.9:
 
    - Download and install Python 3.9 from the official website: [Python Downloads](https://www.python.org/downloads/)
