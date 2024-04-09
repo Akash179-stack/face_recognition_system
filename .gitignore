@@ -9,6 +9,7 @@ __pycache__
 .DS_Store
 .AppleDouble
 .LSOverride
+.idea/
 Icon
 
 # Ignore local development settings
@@ -24,3 +25,6 @@ media/
 
 # Ignore virtual environment
 venv/
+
+# Django models
+migrations
