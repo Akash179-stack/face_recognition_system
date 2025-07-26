@@ -52,7 +52,7 @@ Facial recognition systems are powerful tools for identifying individuals from d
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/arunnasarain/face_recognition_system.git
+   git clone https://github.com/Akash179-stack/face_recognition_system.git
 2. [face-recognition](https://pypi.org/project/face-recognition/) package supports only python3.8 and python3.9. Change directory ```cd face_recognition_system``` and [setup virtual environment](#setting-up-virtual-environment-for-python-39).
 3. Install dependencies:
    ```bash
